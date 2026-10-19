@@ -15,10 +15,11 @@
 `README.md` 中每个技能占一个列表项，格式为：
 
 ```markdown
-- [<skill-name>](skills/<skill-name>/SKILL.md): <description>
+- [<skill-name>](skills/<skill-name>/SKILL.md): <一句话简介>
 ```
 
 - 技能名必须链接到该技能的 `SKILL.md`。
+- 简介概括技能做什么，不需要与 frontmatter 的 `description` 一致。
 - 新增、重命名或删除技能时，同步更新此索引。
 
 ## 提交格式

@@ -15,7 +15,7 @@ for line in (ROOT / "README.md").read_text(encoding="utf-8").splitlines():
 
 problems = []
 for name in sorted(skills - indexed.keys()):
-    problems.append(f"README.md 缺少技能 {name} 的索引行，格式：- [{name}](skills/{name}/SKILL.md): <description>")
+    problems.append(f"README.md 缺少技能 {name} 的索引行，格式：- [{name}](skills/{name}/SKILL.md): <一句话简介>")
 for name in sorted(indexed.keys() - skills):
     problems.append(f"README.md 索引了不存在的技能：{name}")
 for name in sorted(indexed.keys() & skills):
