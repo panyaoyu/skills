@@ -1,0 +1,21 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Run checks
+        run: |
+          status=0
+          for check in .check/*.py; do
+              python -X utf8 "$check" || status=1
+          done
+          exit $status
