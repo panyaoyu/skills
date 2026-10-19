@@ -1,32 +1,31 @@
 ---
 name: feasibility-experiment
-description: Run minimal, isolated experiments to determine whether uncertain technical behavior is actually feasible. Use when the user asks for an empirical feasibility check, proof-of-concept probe, or spike and wants direct observed evidence rather than production-quality code. Do not use for normal feature implementation, refactoring, or production hardening.
+description: 用最小、隔离的实验判断不确定的技术行为是否真的可行。用于：用户要求做可行性验证、概念验证（PoC）或 spike，并且需要直接观察到的证据，而不是生产质量的代码。实现普通功能、重构或生产加固时不使用。
 ---
 
-# Feasibility Experiment
+# 可行性实验
 
-Answer one sharply stated feasibility question with the smallest direct experiment that can distinguish success from failure.
+针对一个表述清晰的可行性问题，用能区分成功与失败的最小直接实验来回答。
 
-## Experiment workspace
+## 实验目录
 
-Create a fresh directory under `research/` in the current working directory for every experiment. Choose a short descriptive kebab-case name, such as `research/aspen-save-as-probe/`. Never reuse or overwrite an earlier experiment; add a short suffix if the name already exists.
+每次实验都在当前工作目录的 `research/` 下新建一个目录。目录名用简短、能说明内容的 kebab-case，例如 `research/aspen-save-as-probe/`。每次实验使用新目录，不复用或覆盖以前的实验；同名目录已存在时加一个短后缀。
 
-Keep new code, dependency files, generated evidence, and the experiment record inside that directory. Read existing project files when useful, but do not turn the probe into a project feature or modify unrelated source and shared dependency files.
+新写的代码、依赖文件、生成的证据和实验记录都放在这个目录里。需要时可以读取项目中已有的文件，但探测实验只用于回答问题：不要把它做成项目功能，也不要修改无关的源码和共享依赖文件。
 
-## Design the smallest discriminating probe
+## 设计最小的判别性探测
 
-- State the question and an observable success criterion before writing code.
-- Exercise the real uncertain boundary whenever possible; a mock does not establish that the actual API, application, file format, or integration works.
-- Prefer one direct script with hard-coded test values. Inline logic and small amounts of duplication are acceptable.
-- Skip reusable abstractions, package layouts, configuration layers, command-line interfaces, broad test suites, refactors, production logging, defensive plumbing, and extensibility unless one is necessary to answer the question.
-- Add only the checks needed to interpret the result unambiguously. If a failure could merely be a setup mistake, use the smallest control or follow-up probe that separates setup failure from unsupported behavior.
-- Stop when the success criterion has been observed or the remaining blocker is clear. Do not continue into production implementation.
+- 写代码之前，先写出可行性问题和可观察的成功判据。
+- 尽量直接触及真正不确定的边界。mock 不能证明真实的 API、应用、文件格式或集成可行。
+- 只写回答问题所需的代码：通常是一个直接运行的探测脚本，测试值硬编码，逻辑内联，允许少量重复。只有在回答问题必须用到时，才加入抽象、配置、命令行接口、测试套件或日志等结构。
+- 只加入解释结果所必需的检查。如果失败可能只是环境配置错误，用最小的对照或后续探测，区分"配置错误"和"行为不受支持"。
+- 观察到成功判据，或剩余的阻碍已经明确时，就停止。探测实验到此为止，不继续做生产实现。
 
-## Isolate added dependencies
+## 隔离新增依赖
 
-Run package-manager commands from the new experiment directory and keep their manifests, lockfiles, and installed packages there.
+在实验目录内运行包管理器命令，清单文件、锁文件和安装的包都留在该目录。
 
-For Python, default to:
+Python 默认使用：
 
 ```text
 uv init --bare --no-workspace
@@ -34,7 +33,7 @@ uv add <needed-packages>
 uv run python probe.py
 ```
 
-For JavaScript or TypeScript, default to:
+JavaScript 或 TypeScript 默认使用：
 
 ```text
 npm init -y
@@ -42,43 +41,43 @@ npm install <needed-packages>
 node probe.mjs
 ```
 
-Use `npm exec` for locally installed command-line packages. For another language, use its local project environment and native package manager. Do not use global `pip`, global `npm` installs, a shared virtual environment, or the parent project's dependency manifest. Using an already installed runtime or the application being probed is fine; the isolation rule applies to experiment code and newly added dependencies.
+本地安装的命令行包用 `npm exec` 运行。其他语言使用该语言的本地项目环境和原生包管理器。依赖始终装在实验目录内：不使用全局 `pip`、全局 `npm` 安装、共享虚拟环境或父项目的依赖清单。使用已安装的运行时或被探测的应用本身没有问题；隔离规则只针对实验代码和新增依赖。
 
-If the preferred package manager is unavailable, use another available option only when it preserves local isolation. Do not install a global tool merely to run the probe without the user's approval.
+首选包管理器不可用时，只在能保持本地隔离的前提下改用其他工具。仅为运行探测而需要安装全局工具时，先征得用户同意。
 
-## Preserve evidence
+## 保留证据
 
-Keep a concise `README.md` in the experiment directory, written in the user's language, with this structure:
+在实验目录中维护一份简洁的 `README.md`，结构如下：
 
 ```markdown
-# [Experiment title]
+# [实验标题]
 
-## Question
-[One falsifiable feasibility question]
+## 问题
+[一个可证伪的可行性问题]
 
-## Success criterion
-[The exact observable result that counts as success]
+## 成功判据
+[算作成功的、确切可观察的结果]
 
-## Environment
-[Only relevant application, runtime, package, OS, or API versions]
+## 环境
+[只列相关的应用、运行时、包、操作系统或 API 版本]
 
-## Commands
-[Exact commands that reproduce the run]
+## 命令
+[能复现本次运行的确切命令]
 
-## Raw evidence
-[Verbatim short output, or paths to unedited logs, generated files, and screenshots]
+## 原始证据
+[简短的原样输出，或未经修改的日志、生成文件、截图的路径]
 
-## Findings
-[What each observed result establishes]
+## 发现
+[每个观察结果能确立什么]
 
-## Conclusion
-[Feasible under tested conditions / not demonstrated / inconclusive, with scope]
+## 结论
+[在测试条件下可行 / 未证实 / 无法判断，并说明适用范围]
 ```
 
-Run the probe rather than stopping after writing it. Save material stdout and stderr without rewriting them, for example in `result.log`; if the evidence is a generated file or UI state, preserve the file or a screenshot when possible. Keep failed attempts only when they explain the conclusion.
+写完探测脚本后要实际运行。原样保存关键的 stdout 和 stderr，例如存入 `result.log`；如果证据是生成的文件或界面状态，尽量保存该文件或截图。失败的尝试只在能解释结论时保留。
 
-A successful observation establishes feasibility only under the recorded conditions. A failed attempt does not establish universal impossibility. Use `not demonstrated` when the tested approach failed, `inconclusive` when execution was blocked, and `not feasible within <specific constraint>` only when the evidence directly rules out that bounded case.
+成功的观察只能证明在记录的条件下可行。失败的尝试不能证明普遍不可能。所采用的方法失败时，结论写"未证实"；执行受阻时，写"无法判断"；只有证据直接排除了某个有界情形时，才写"在〈具体约束〉下不可行"。
 
-## Report back
+## 汇报
 
-Lead with the feasibility conclusion in plain language. Link the experiment directory and the strongest evidence, state the tested conditions and remaining limits, and avoid proposing a production rewrite unless the user asks for one.
+先用平实的语言给出可行性结论。附上实验目录和最有力证据的链接，说明测试条件和剩余局限。除非用户要求，不提议做生产级重写。
