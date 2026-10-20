@@ -17,6 +17,6 @@
 
 所有技能都位于 `skills/` 目录。可以使用的skills如下所示。
 
-- [read-paper](skills/read-paper/SKILL.md): 从独立研究者的视角阅读论文，核验已有工作、实际知识增量和证据有效性。
+- [read-paper](skills/read-paper/SKILL.md): 从领域研究者的角度阅读论文，对照领域基线区分论文的声称贡献和实际贡献。
 - [feasibility-experiment](skills/feasibility-experiment/SKILL.md): 用最小、隔离的实验验证技术可行性，保留可复查的过程与证据。
 
