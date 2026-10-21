@@ -1,0 +1,42 @@
+{
+  "common_request": "请使用本目录的 SKILL.md 阅读 paper.md，评价论文的声称贡献和实际贡献。工作区背景资料在 sources/，若有 supplement.md 也请阅读。这是封闭的虚构研究资料，所有相关材料均已给出；只读取本目录中的材料，不访问网络或目录外的文件，不修改文件。",
+  "cases": [
+    {
+      "id": "RP-TIME-01",
+      "fixture": "chronology",
+      "delegation": "fresh-context",
+      "request_suffix": "请评价目标版本在发表时的新颖性；若讨论后续研究，请同时交代它与当时判断的关系。"
+    },
+    {
+      "id": "RP-EVIDENCE-01",
+      "fixture": "evidence",
+      "delegation": "fresh-context",
+      "request_suffix": "请逐项评价 C1、C2、C3。"
+    },
+    {
+      "id": "RP-EVIDENCE-02",
+      "fixture": "evidence",
+      "supplement": "counterexample.md",
+      "delegation": "fresh-context",
+      "request_suffix": "请逐项评价 C1、C2、C3。"
+    },
+    {
+      "id": "RP-DELEGATION-01",
+      "fixture": "evidence",
+      "delegation": "tool-absent",
+      "request_suffix": "请逐项评价 C1、C2、C3。"
+    },
+    {
+      "id": "RP-DELEGATION-02",
+      "fixture": "evidence",
+      "delegation": "user-forbidden",
+      "request_suffix": "本次请不要调用子智能体或委派工具。请逐项评价 C1、C2、C3。"
+    },
+    {
+      "id": "RP-DELEGATION-03",
+      "fixture": "evidence",
+      "delegation": "startup-error",
+      "request_suffix": "请逐项评价 C1、C2、C3。"
+    }
+  ]
+}
