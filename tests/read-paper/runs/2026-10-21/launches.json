@@ -1,0 +1,46 @@
+[
+  {
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "read_paper_time",
+      "fork_turns": "none",
+      "message": "使用 /workspace/scratch/e8b4f9bdf816/read-paper-inputs/time-01/SKILL.md，执行 /workspace/scratch/e8b4f9bdf816/read-paper-inputs/time-01/request.md 中的请求。只读取该目录下的材料，不读取其他目录或网络，不修改文件。必要的背景子智能体同样遵守该目录访问边界。完成后直接返回完整答复，并在末尾单独附上实际读取的文件、委派调用原始参数及返回标识，供工作记录使用。"
+    },
+    "result": {
+      "task_name": "/root/read_paper_time"
+    }
+  },
+  {
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "read_paper_evidence",
+      "fork_turns": "none",
+      "message": "使用 /workspace/scratch/e8b4f9bdf816/read-paper-inputs/evidence-01/SKILL.md，执行 /workspace/scratch/e8b4f9bdf816/read-paper-inputs/evidence-01/request.md 中的请求。只读取该目录下的材料，不读取其他目录或网络，不修改文件。必要的背景子智能体同样遵守该目录访问边界。完成后直接返回完整答复，并在末尾单独附上实际读取的文件、委派调用原始参数及返回标识，供工作记录使用。"
+    },
+    "result": {
+      "task_name": "/root/read_paper_evidence"
+    }
+  },
+  {
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "read_paper_forbidden",
+      "fork_turns": "none",
+      "message": "使用 /workspace/scratch/e8b4f9bdf816/read-paper-inputs/delegation-02/SKILL.md，执行 /workspace/scratch/e8b4f9bdf816/read-paper-inputs/delegation-02/request.md 中的请求。只读取该目录下的材料，不读取其他目录或网络，不修改文件。完成后直接返回完整答复，并在末尾单独附上实际读取的文件、委派调用原始参数及返回标识（如有），供工作记录使用。"
+    },
+    "result": {
+      "task_name": "/root/read_paper_forbidden"
+    }
+  },
+  {
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "read_paper_counterexample",
+      "fork_turns": "none",
+      "message": "使用 /workspace/scratch/e8b4f9bdf816/read-paper-inputs/evidence-02/SKILL.md，执行 /workspace/scratch/e8b4f9bdf816/read-paper-inputs/evidence-02/request.md 中的请求。只读取该目录下的材料，不读取其他目录或网络，不修改文件。必要的背景子智能体同样遵守该目录访问边界。完成后直接返回完整答复，并在末尾单独附上实际读取的文件、委派调用原始参数及返回标识，供工作记录使用。"
+    },
+    "result": {
+      "task_name": "/root/read_paper_counterexample"
+    }
+  }
+]

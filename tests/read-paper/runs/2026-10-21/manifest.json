@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "target_commit": "846fbd331f513ca41b4668c36e9c635bfed7404b",
+  "skill_sha256": "4537f798f5949ea0f5b0b51bb0f61b13dafbd1a3c7aec9d9848320373a431fcb",
+  "cases_sha256": "21b5e5ac815c7c9c5a41f2cf404949daf329b43e19950985439226b0428c2636",
+  "model_version": "not exposed by runtime; inherited current session model",
+  "grading": "semantic review by coordinating agent; no independent second grader",
+  "cases": [
+    {
+      "id": "RP-TIME-01",
+      "status": "PASS",
+      "attempts": 1,
+      "input_sha256": {
+        "SKILL.md": "4537f798f5949ea0f5b0b51bb0f61b13dafbd1a3c7aec9d9848320373a431fcb",
+        "paper.md": "fc74e6fc79a75940636241ef0ab71a059df8c4fbdf9697c545c991743ba1822c",
+        "request.md": "3556ca9b577d1825095bec3be0feede56bacc3e9379a2f1ab50bff5646398889",
+        "sources/catalog.md": "d92e5f5449ed4f834b78854241cedccdab96d91ffe75155fc22e7dbc2d5008cf"
+      }
+    },
+    {
+      "id": "RP-EVIDENCE-01",
+      "status": "PASS",
+      "attempts": 1,
+      "input_sha256": {
+        "SKILL.md": "4537f798f5949ea0f5b0b51bb0f61b13dafbd1a3c7aec9d9848320373a431fcb",
+        "paper.md": "a3cba5da99218b0c5f9f0c5ea64f587c101d862e7fd39702a55a6d30fb673efb",
+        "request.md": "403cf8a10aefc0db8cda7e1622dda6395d608644a5f88b68b30d775e9167b79f",
+        "sources/catalog.md": "9a8d500837003ae93cc0e3d1bb1c0cc7bb076fd35cd20d30ec2d4ffbad08cc54"
+      }
+    },
+    {
+      "id": "RP-EVIDENCE-02",
+      "status": "PASS",
+      "attempts": 1,
+      "input_sha256": {
+        "SKILL.md": "4537f798f5949ea0f5b0b51bb0f61b13dafbd1a3c7aec9d9848320373a431fcb",
+        "paper.md": "a3cba5da99218b0c5f9f0c5ea64f587c101d862e7fd39702a55a6d30fb673efb",
+        "request.md": "403cf8a10aefc0db8cda7e1622dda6395d608644a5f88b68b30d775e9167b79f",
+        "sources/catalog.md": "9a8d500837003ae93cc0e3d1bb1c0cc7bb076fd35cd20d30ec2d4ffbad08cc54",
+        "supplement.md": "3d926e057c998b07c551a2b74e0bfa47c9332f7313561e4162f5a40a0764dad9"
+      }
+    },
+    {
+      "id": "RP-DELEGATION-01",
+      "status": "NOT_RUN",
+      "attempts": 0,
+      "input_sha256": {
+        "SKILL.md": "4537f798f5949ea0f5b0b51bb0f61b13dafbd1a3c7aec9d9848320373a431fcb",
+        "paper.md": "a3cba5da99218b0c5f9f0c5ea64f587c101d862e7fd39702a55a6d30fb673efb",
+        "request.md": "403cf8a10aefc0db8cda7e1622dda6395d608644a5f88b68b30d775e9167b79f",
+        "sources/catalog.md": "9a8d500837003ae93cc0e3d1bb1c0cc7bb076fd35cd20d30ec2d4ffbad08cc54"
+      },
+      "reason": "Cannot remove delegation tools from child sessions."
+    },
+    {
+      "id": "RP-DELEGATION-02",
+      "status": "PASS",
+      "attempts": 1,
+      "input_sha256": {
+        "SKILL.md": "4537f798f5949ea0f5b0b51bb0f61b13dafbd1a3c7aec9d9848320373a431fcb",
+        "paper.md": "a3cba5da99218b0c5f9f0c5ea64f587c101d862e7fd39702a55a6d30fb673efb",
+        "request.md": "3142cd7a7320a424e553efadea31fa4b033d456fd2661d38b3c09c7bae290ecc",
+        "sources/catalog.md": "9a8d500837003ae93cc0e3d1bb1c0cc7bb076fd35cd20d30ec2d4ffbad08cc54"
+      }
+    },
+    {
+      "id": "RP-DELEGATION-03",
+      "status": "NOT_RUN",
+      "attempts": 0,
+      "input_sha256": {
+        "SKILL.md": "4537f798f5949ea0f5b0b51bb0f61b13dafbd1a3c7aec9d9848320373a431fcb",
+        "paper.md": "a3cba5da99218b0c5f9f0c5ea64f587c101d862e7fd39702a55a6d30fb673efb",
+        "request.md": "403cf8a10aefc0db8cda7e1622dda6395d608644a5f88b68b30d775e9167b79f",
+        "sources/catalog.md": "9a8d500837003ae93cc0e3d1bb1c0cc7bb076fd35cd20d30ec2d4ffbad08cc54"
+      },
+      "reason": "Cannot inject delegation startup error; no actual startup failure occurred."
+    }
+  ],
+  "artifact_sha256": {
+    "time-01.md": "b09a1f6b7ac324f047385450e193ecc9ae46d160aa4b8c099a43e17802358fd2",
+    "time-01-trace.md": "0267b2dbf652ba64b65bb6d8a1044bdb38aac508aebc702717de33fe4b54eccc",
+    "time-01-baseline-trace.md": "5a597385ea6e648fdf84d3e2b1e93f038dcdcefa9455dcea8e985d9115b574e5",
+    "evidence-01.md": "d65de0b7156a36dae7cf7ccd0f20e87628813bf201e4759fc6f5e7d2d052b357",
+    "evidence-01-trace.md": "d8896b5a5144c12931b53cfdccddab62b3ba0f08290a289bb239be5211a55dcc",
+    "evidence-01-baseline-trace.md": "b0de263e9de00a9a119f58d0fcf8071051fb6ad0b52223fcd29bb4aad75f56e3",
+    "evidence-02.md": "39eb29a013a1b69e32496ba13ea271e8140d296d33f21d3a788547dde34ec80a",
+    "evidence-02-trace.md": "02e11eabdb1e94ba7c704faef15b0faf85df699906c89002f189999f16fc6ebf",
+    "evidence-02-baseline-trace.md": "d05f5af7fcc8bc5e36dc4af22232e83416d3a6fc6fe111b88582133dbf2daa2b",
+    "delegation-02.md": "eba408d1ddf7962633404ad83964338bd87e8fc2eb5522881eaf1b2cace5b283",
+    "delegation-02-trace.md": "9e6d4e96c30251074ba732b0ad2c87dde4263f57c58a9ea9982a2ff95d6e7548"
+  }
+}
