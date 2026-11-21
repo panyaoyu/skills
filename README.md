@@ -20,4 +20,5 @@
 - [read-paper](skills/read-paper/SKILL.md): 从领域研究者的角度阅读论文，对照领域基线区分论文的声称贡献和实际贡献。
 - [feasibility-experiment](skills/feasibility-experiment/SKILL.md): 用最小、隔离的实验验证技术可行性，保留可复查的过程与证据。
 - [aspen-basis](skills/aspen-basis/SKILL.md): Aspen Plus 基础文件操作：转换 `.inp`/`.bkp`/`.apw`/`.apwz` 格式、运行模拟与导出 `.his`/`.rep` 报告。
+- [translate-skills](skills/translate-skills/SKILL.md): 将中文 skill 的改动同步翻译到英文版，并核实译文与术语一致性。
 
