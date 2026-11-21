@@ -10,6 +10,16 @@
   - `SKILL.md`：技能入口，frontmatter 中的 `name` 和 `description` 决定技能何时被调用。
   - `references/`：可选，由 `SKILL.md` 按需指向的参考资料。
 
+## 用户级技能安装
+
+安装技能时，将仓库中的整个 `skills/<skill-name>/` 目录复制到对应工具的技能目录下。
+
+| 工具 | 技能目录 |
+| --- | --- |
+| Codex | `~/.codex/skills/` |
+| Claude Code | `~/.claude/skills/` |
+| Antigravity | `~/.gemini/config/skills/` |
+
 ## README 技能索引
 
 `README.md` 中每个技能占一个列表项，格式为：
