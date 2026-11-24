@@ -68,16 +68,15 @@ def cmd_convert(args):
 def cmd_run(args):
     with open_aspen(Path(args.src)) as aspen:
         aspen.Engine.Run2()
-        err_node = aspen.Tree.FindNode(r"\Data\Results Summary\Run-Status\Output\PER_ERROR")
-        per_error = err_node.Value if err_node is not None else None
+        info_node = aspen.Tree.FindNode(r"\Data\Results Summary\Run-Status\Output\PER_ERROR")
+        per_error = info_node.Value if info_node is not None else None
         if args.save:
             save_model(aspen, Path(args.save))
         if args.his:
             export_file(aspen, HAPEXP_HISTORY, Path(args.his), ".his")
         if args.rep:
             export_file(aspen, HAPEXP_REPORT, Path(args.rep), ".rep")
-    status = "OK" if per_error == 0 else f"ERROR(PER_ERROR={per_error})"
-    print(f"RUN {status}")
+    print(f"RUN PER_ERROR={per_error}")
 
 
 def cmd_export(args):
