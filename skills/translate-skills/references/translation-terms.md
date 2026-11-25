@@ -29,3 +29,5 @@
 | 推动力项 | driving force term | | 驱动力项 | LHHW 速率方程分子中的可逆反应浓度项 |
 | 吸附项 | adsorption term | | | LHHW 速率方程分母中求和的一项 |
 | 吸附表达式 | adsorption expression | | | LHHW 速率方程的整个分母 |
+| 段落 | paragraph | section, block | 区块、节 | Aspen Plus `.inp` 文件中以一级关键字开头的一组输入，如 `STREAM`、`BLOCK`、`PROPERTIES` |
+| 语句 | sentence | statement, line | 句子、行 | Aspen Plus `.inp` 文件中段落内以二级关键字开头的一条输入，如 `BLOCK` 下的 `PARAM`、`STOIC`、`CONV` |
