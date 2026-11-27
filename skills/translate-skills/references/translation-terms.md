@@ -25,6 +25,7 @@
 | 设计规定 | design spec | specification | | Aspen Plus 中用来达到目标值的工具 |
 | 调节变量 | manipulated variable | adjusted variable | | |
 | 基准 | basis | reference | | 如指定组成时选用的摩尔基准或质量基准 |
+| 反应集 | reaction set | | 反应组 | Aspen Plus 中一个 `REACTIONS` 段落定义的反应集合，可以包含一个或多个反应 |
 | 动力学因子 | kinetic factor | rate factor | | LHHW 速率方程分子中的速率常数项 |
 | 推动力项 | driving force term | | 驱动力项 | LHHW 速率方程分子中的可逆反应浓度项 |
 | 吸附项 | adsorption term | | | LHHW 速率方程分母中求和的一项 |
